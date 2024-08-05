@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --color-primario: #000000;
+    --color-secundario: #f6f6f6;
+    --color-terceario: #22D4FD;
+    --color-hover: #272727;
+
+    --fuente-montserrat: ´Montserrat´, sans serif;
+    --fuente-krona: ´Krona´, sans serif;
+}
+
+* {
+    padding: 0;
+    margin:0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.header {
+    padding: 2% 0% 0% 15%; /*orden del padin, arriba, derecha, abajo, izquierdas*/
+    
+}
+
+.header__menu {
+    display: flex; /*se usa el display flex para usar la propiedades de este, en este caso es gap*/
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600px; 
+    color: var(--color-terceario);
+    text-decoration: none;
+}
+
+.presentacion {
+    padding: 6% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex ;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terceario); ;
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-size: 1.5rem;
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+}
+    /* 
+        Esto es un comentario en CSS con
+        salto de línea
+    */
+
+.presentacion__enlaces__link {
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0; /*crea un espacio dentro del elemento*/
+    border-radius: 8px ;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600px;
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terceario);
+    display: flex /*este alinea imagen con palabras aunque los pega uno al lado del otro*/;
+    justify-content: center; /* los alinea ahora centrado se usa este por que estamos en el eje horizontal*/
+    gap: 10px;/* separa 10 pixeles los elementos del contenedor, es decir, la imagen y el texto en este caso*/
+}
+
+.presentacion__enlaces__link:hover {
+    cursor: pointer; /*puntero de manita:3*/
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen {
+width: 50%;
+
+}
+
+.footer {
+    background-color: var(--color-terceario);
+    padding: 1.5rem; /*este se encarga como del tamaño de la caja*/
+    text-align: center;
+    color: var(--color-primario);
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400px;
+}
+
+@media (max-width: 1200px) {
+        .header {
+            padding: 10%; 
+        }
+        .header__menu{
+            justify-content: center; /*no es necesario colocar el flex direction aqui ya qye el header menu lo tenia,
+            solo agregamos el centrar*/
+        }
+    .presentacion {
+        flex-direction: column-reverse /*la presentación por defecto del flex direction es horizontal(row) pero al darle 
+        esta propiedd despues de flex la imagen ira debajo del texto cuando se cumplan las condiciones y para eso es el reverse
+        */;
+        padding: 5% ;
+    }
+}
